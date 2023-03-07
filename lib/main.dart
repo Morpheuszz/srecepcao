@@ -41,19 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 200, 0, 150),
+                padding: const EdgeInsets.fromLTRB(0, 200, 0, 100),
                 child: SizedBox(
                   width: 150,
-                  height: 75,
+                  height: 100,
                   child: ElevatedButton(onPressed: () {botaojogar();}, style: ElevatedButton.styleFrom(backgroundColor: AppColor.verde),child: const Text('Jogar')
                     ),
                   ),
                 ),
-              SizedBox(
-                width: 150,
-                height: 75,
-                child: Image.asset('assets/images/dev.png'),
-              ),
+              rodape(),
             ],
           ),
         ),

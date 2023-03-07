@@ -16,4 +16,20 @@ class Barra extends StatelessWidget implements PreferredSizeWidget{
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
+class rodape extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150,
+      height: 150,
+      child: Column(
+        children: [
+          Image.asset('assets/images/dev.png'),
+          SizedBox(height: 10),
+          Image.asset('assets/images/jr.png')
+        ],
+      ),
+    );
+  }
+}
 
