@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom.dart';
+import 'codigo.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -77,7 +78,7 @@ class _jogarState extends State<jogar> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                codigo()
+                Codigo()
               ],
             ),
           )
