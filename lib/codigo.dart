@@ -11,7 +11,7 @@ class Codigo extends StatefulWidget {
 
 class _codigoState extends State<Codigo> {
   TextEditingController textEditingController = TextEditingController();
-  String word = 'abracadabra';
+  String word = '';
   void updateText() {
     word = tabela(textEditingController.text);
   }
@@ -28,11 +28,6 @@ class _codigoState extends State<Codigo> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-          Container(
-            height: 50,
-            width: 100,
-            child: Text(word, style: TextStyle(fontSize:24),),
-          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(200, 0, 200, 80),
             child: TextFormField(
@@ -57,9 +52,23 @@ class _codigoState extends State<Codigo> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: AppColor.verde),
               onPressed: () {
-                setState(() {
-                  updateText();
-                });
+                updateText();
+                if(gerarpopup == true) {
+                  setState(() {
+                    showDialog(context: context, builder: (_) => AlertDialog(
+                      title: Text('Palavra Desbloqueada!'),
+                      content: Text('$word'),
+                    ), barrierDismissible: true);
+                  });
+                }
+                else {
+                  setState(() {
+                    showDialog(context: context, builder: (_) => AlertDialog(
+                      title: Text('Código Incorreto'),
+                      titleTextStyle: TextStyle(color: AppColor.red),
+                    ), barrierDismissible: true);
+                  });
+                }
               },
               child: const Text('Enviar'),
             ),
