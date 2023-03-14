@@ -6,11 +6,10 @@ class AppColor {
 }
 
 class Barra extends StatelessWidget implements PreferredSizeWidget{
+
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: Center(child: const Text('Semana de Recepção!')), backgroundColor: AppColor.verde
-
-    );
+    return AppBar(title: Center(child: Text('Semana de Recepção')), backgroundColor: AppColor.verde);
   }
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -25,7 +24,7 @@ class rodape extends StatelessWidget {
       child: Column(
         children: [
           Image.asset('assets/images/dev.png'),
-          SizedBox(height: 10),
+          SizedBox(height: 20),
           Image.asset('assets/images/jr.png')
         ],
       ),
