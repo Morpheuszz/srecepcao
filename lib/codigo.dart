@@ -61,11 +61,11 @@ class _codigoState extends State<Codigo> {
                         context: context,
                         builder: (_) => AlertDialog(
                               title:
-                                  Center(child: Text('Palavra Desbloqueada!')),
+                                  Center(child: Text('Expressão Desbloqueada!')),
                               content: Container(
                                   width: 100,
                                   height: 100,
-                                  child: Center(child: Text('$word', style: TextStyle(fontSize: 24),))),
+                                  child: Center(child: Text('$word', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),))),
                             ),
                         barrierDismissible: true);
                   });

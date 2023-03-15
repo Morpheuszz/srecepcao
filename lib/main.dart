@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:semana_recepcao/lista.dart';
 import 'custom.dart';
 import 'codigo.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -129,7 +130,7 @@ class _RespostaState extends State<Resposta> {
                         child: TextFormField(
                           controller: textEditingController,
                           decoration: const InputDecoration(
-                            labelText: 'Código',
+                            labelText: 'Resposta Final',
                             enabledBorder: OutlineInputBorder(
                               borderSide:
                                   BorderSide(width: 3, color: AppColor.verde),
@@ -163,15 +164,17 @@ class _RespostaState extends State<Resposta> {
                                                   color: AppColor.verde),
                                             )),
                                             content: Container(
-                                                width: 100,
-                                                height: 100,
+                                                width: 75,
+                                                height: 50,
                                                 child: Center(
                                                   child: Text(
-                                                      'A dica da próxima etapa é Abacaxi'),
+                                                      'Agora mostre a tela a um organizador para continuar.', textAlign: TextAlign.center,),
                                                 )),
                                           ));
                                 });
                               } else {
+                                final player = AudioPlayer();
+                                player.play(UrlSource('https://www.youtube.com/watch?v=EeA_Y0FSv5Q'));
                                 setState(() {
                                   setState(() {
                                     showDialog(
@@ -180,7 +183,7 @@ class _RespostaState extends State<Resposta> {
                                           title: Center(
                                               child: Text(
                                                 'Resposta Incorreta',
-                                                style: TextStyle(
+                                                style: TextStyle(fontSize: 50,
                                                     color: AppColor.red),
                                               )),
                                         ),
